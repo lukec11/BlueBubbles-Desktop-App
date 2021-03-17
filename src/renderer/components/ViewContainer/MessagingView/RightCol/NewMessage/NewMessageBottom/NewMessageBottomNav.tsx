@@ -940,9 +940,17 @@ class NewMessageBottomNav extends React.Component<object, NewMessageBottomNavSta
                                     spellCheck="true"
                                     rows={1}
                                     wrap="hard"
-                                    placeholder={this.state.showGIFSelector ? "Search for GIF" : "BlueBubbles"}
+                                    placeholder={this.state.showGIFSelector ? "Search for GIF" : "iMessage"}
                                     value={this.state.enteredMessage}
                                     onChange={e => this.handleMessageChange(e)}
+                                    onFocus={e => {
+                                        e.target.placeholder = "";
+                                    }}
+                                    onBlur={e => {
+                                        e.target.placeholder = this.state.showGIFSelector
+                                            ? "Search for gif"
+                                            : "iMessage";
+                                    }}
                                 />
                                 <svg
                                     id="emojiPickerButton"

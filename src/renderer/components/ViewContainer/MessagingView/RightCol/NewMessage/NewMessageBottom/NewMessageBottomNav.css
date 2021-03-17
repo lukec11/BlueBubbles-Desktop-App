@@ -62,7 +62,7 @@
     background-repeat: no-repeat;
     border-radius: 25px;
     flex-grow: 1;
-    padding: 3px 35px 3px 8px;
+    padding: 3px 35px 2px 8px;
     font-family: "SF UI Display Bold";
     font-size: calc(var(--message-font-size) + 1px);
     color: var(--right-primary-color);
@@ -73,6 +73,8 @@
 }
 
 *::placeholder {
+    opacity: 0.75;
+    font-size: calc(var(--message-font-size) - 1px);
     color: var(--placeholder-color);
 }
 

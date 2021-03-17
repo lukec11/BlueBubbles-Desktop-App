@@ -1025,9 +1025,17 @@ class RightBottomNav extends React.Component<Props, State> {
                                     spellCheck="true"
                                     wrap="hard"
                                     rows={1}
-                                    placeholder={this.state.showGIFSelector ? "Search for GIF" : "BlueBubbles"}
+                                    placeholder={this.state.showGIFSelector ? "Search for GIF" : "iMessage"}
                                     value={this.state.enteredMessage}
                                     onChange={e => this.handleMessageChange(e)}
+                                    onFocus={e => {
+                                        e.target.placeholder = "";
+                                    }}
+                                    onBlur={e => {
+                                        e.target.placeholder = this.state.showGIFSelector
+                                            ? "Search for gif"
+                                            : "iMessage";
+                                    }}
                                 />
                                 <svg
                                     id="emojiPickerButton"
